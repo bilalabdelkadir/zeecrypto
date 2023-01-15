@@ -25,8 +25,8 @@ const Navbar = () => {
           Sign In
         </Link>
         <Link
-          className="bg-button text-btnText px-5 py-2 rounded-xl hover:rounded-none ease-in-out duration-100 ml-2 "
-          to="/singout"
+          className="bg-button text-btnText px-5 py-2 rounded-xl hover:rounded-none ease-in-out duration-100 ml-2"
+          to="/signout"
         >
           Sign out
         </Link>
@@ -54,12 +54,12 @@ const Navbar = () => {
         <div className="flex flex-col p-4 w-full">
           <Link to="/signin">
             <button className="w-full my-2 p-3 bg-primary text-primary border-secondary rounded-2xl shadow-2xl ">
-              Sing In
+              Sign In
             </button>
           </Link>
           <Link to="/signout">
             <button className="w-full p-3 my-2 bg-button text-btnText">
-              Sing Out
+              Sign Out
             </button>
           </Link>
         </div>
