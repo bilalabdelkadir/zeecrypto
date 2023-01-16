@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // Pages
 import Navbar from "./components/Navbar";
@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Signout from "./pages/Signout";
 import Signin from "./pages/Signin";
 import Account from "./pages/Account";
+import CoinPage from "./pages/CoinPage";
 // axios
 import axios from "axios";
 // Theme context
@@ -28,13 +29,18 @@ function App() {
   }, [url]);
   return (
     <ThemeProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home coins={coins} />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signout" element={<Signout />} />
-        <Route path="/account" element={<Account />} />
-      </Routes>
+      <React.StrictMode>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home coins={coins} />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signout" element={<Signout />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/coin/:coinId" element={<CoinPage />}>
+            <Route />
+          </Route>
+        </Routes>
+      </React.StrictMode>
     </ThemeProvider>
   );
 }
